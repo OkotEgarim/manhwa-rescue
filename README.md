@@ -13,9 +13,9 @@ If you've ever started a recap video "just for a few minutes" and found yourself
 - **⚡ Instant Presets**: Set a timer for 20 minutes, 30 minutes, or 1 hour with a single click.
 - **🕒 Custom 24-Hour Selector**: Pick an exact target time (forced 24h layout, bypassing browser-language AM/PM quirks) for your session to end.
 - **🔒 Anti-Procrastination Lock**: Once a timer is active, the extension popup completely locks up. All inputs are disabled, showing a live, non-bypassable countdown to your rescue.
-- **🛑 Smart URL Blocking**: When the timer expires, the active YouTube URL (video or full playlist) is blocked for **15 minutes**.
-- **🎯 Playlist-Aware Interceptor**: Attempting to bypass the block by opening another video in the same playlist or reloading the page will redirect you straight back to the lock screen.
-- **🔄 Auto-Release**: A beautiful, custom glassmorphic warning page handles the 15-minute countdown and redirects you automatically back to your video once the break is over.
+- **🛑 Smart URL Blocking**: When the timer expires, the active YouTube video (identified by its unique video ID) is blocked for **15 minutes**.
+- **🎯 Video ID Interceptor**: Attempting to bypass the block by reloading, accessing the raw video URL directly, or loading it from inside a playlist will be intercepted and redirected to the lock screen. Other playlist videos remain accessible, ensuring the block is strictly targeted to the specific video you were procrastinating on.
+- **🔄 Focus Preservation Page**: A beautiful, custom glassmorphic warning page handles the 15-minute countdown. Unlike other blockers that pull you back immediately, **Manhwa Rescue does not automatically redirect you back** when the break is over. This preserves your workflow momentum! Once the countdown ends, a "Return to video" button appears so returning is a conscious, active choice.
 
 ---
 
@@ -48,7 +48,7 @@ If you've ever started a recap video "just for a few minutes" and found yourself
 ├── background.js      # URL interception, alarms & dynamic blocking logic
 ├── content.js         # Video injection script (pauses active playback)
 ├── blocked.html       # The 15-minute break screen
-├── blocked.js         # Time countdown and auto-redirect back to content
+├── blocked.js         # Time countdown and focus celebration
 └── icons/             # Custom designed icons (16px, 48px, 128px)
 ```
 
@@ -61,11 +61,12 @@ If you've ever started a recap video "just for a few minutes" and found yourself
 3. Choose a duration or set an exact hour.
 4. Click **Démarrer le chronomètre**.
 5. *Focus on your work!*
-6. Once the time is up, the active tab redirects to a gorgeous, glowing lock screen for exactly **15 minutes**. You cannot reload or watch any videos from that playlist.
-7. Once the 15 minutes are up, the extension automatically loads the video back for you. Enjoy your guilt-free break!
+6. Once the time is up, the active tab redirects to a gorgeous, glowing lock screen for exactly **15 minutes**. You cannot watch this specific video anywhere on YouTube.
+7. Once the 15 minutes are up, the page celebrates your focus with a motivational message and displays a **Return to video** button. If you are in the flow of your work, you can keep working undisturbed!
 
 ---
 
 ## 📄 License
 
 Created with ❤️ to rescue developers and students from procrastination.
+

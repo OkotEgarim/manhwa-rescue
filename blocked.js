@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const minutesEl = document.getElementById('minutes');
   const secondsEl = document.getElementById('seconds');
+  const statusMessageEl = document.getElementById('statusMessage');
+  const accessBtnEl = document.getElementById('accessBtn');
+
+  let intervalId;
 
   function updateTimer() {
     const remainingMs = until - Date.now();
@@ -14,9 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
       minutesEl.textContent = '00';
       secondsEl.textContent = '00';
       
-      // Redirect back to original page when unblocked
+      clearInterval(intervalId);
+      
+      // Update UI to encourage focus instead of auto-redirecting
+      statusMessageEl.innerHTML = "Le sauvetage est réussi ! La vidéo est débloquée, mais reste concentré et continue sur ta lancée. 🚀";
+      
       if (targetUrl) {
-        window.location.href = targetUrl;
+        accessBtnEl.href = targetUrl;
+        accessBtnEl.style.display = 'inline-block';
       }
       return;
     }
@@ -31,5 +40,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Update immediately and then every second
   updateTimer();
-  setInterval(updateTimer, 1000);
+  intervalId = setInterval(updateTimer, 1000);
 });
