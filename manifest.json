@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Manhwa Rescue",
+  "version": "1.0",
+  "description": "Évite de passer 3 heures devant une vidéo de récap sans pause au lieu de travailler en mettant en pause ou fermant YouTube après la durée de ton choix.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "alarms",
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Manhwa Rescue"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manhwa Rescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 1rem;
+      width: 300px;
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+      margin: 0 0 0.5rem;
+      text-align: center;
+    }
+
+    .option-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    select,
+    input[type="time"] {
+      width: 100%;
+      padding: 0.4rem;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 8px;
+      background: #ff6b6b;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    button:hover {
+      transform: scale(1.02);
+    }
+
+    .note {
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+      opacity: 0.8;
+      text-align: center;
+    }
+
+    .time-picker-24h {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .time-picker-24h select {
+      flex: 1;
+      text-align: center;
+    }
+
+    .time-picker-24h .colon {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Manhwa Rescue</h1>
+  <br>
+  <div class="option-group">
+    <label for="preset">Durée prédéfinie</label>
+    <select id="preset">
+      <option value="" selected>-- Sélectionner --</option>
+      <option value="20">20 minutes</option>
+      <option value="30">30 minutes</option>
+      <option value="60">1 heure</option>
+    </select>
+  </div>
+  <div class="option-group">
+    <label>Heure précise</label>
+    <div class="time-picker-24h">
+      <select id="exactHour">
+        <option value="" selected>HH</option>
+      </select>
+      <span class="colon">:</span>
+      <select id="exactMinute">
+        <option value="" selected>MM</option>
+      </select>
+    </div>
+  </div>
+  <button id="startBtn">Démarrer le chronomètre</button>
+  <p class="note">L'extension agit uniquement sur l'onglet actif.</p>
+  <script src="popup.js"></script>
+</body>
+
+</html>
