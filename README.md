@@ -33,8 +33,6 @@ If you've ever started a recap video "just for a few minutes" and found yourself
 3. Click the **Load Temporary Add-on...** (or *Installer un module temporaire...*) button.
 4. Select the `manifest.json` file inside your local **Manhwa Rescue** folder.
 
-*Note: For a permanent installation, compress the folder contents into a `.zip` and submit it to [addons.mozilla.org (AMO)](https://addons.mozilla.org/developers/) as an **unlisted self-distributed add-on** to get your signed permanent `.xpi` file.*
-
 ### Chrome based browsers
 
 1. Go to `chrome://extensions/`.
